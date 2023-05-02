@@ -6,7 +6,7 @@ describe("Testing the Radio Bill function", function() {
             calculateRadio.setRadioBill("call")
             assert.equal(2.75, calculateRadio.getRadioTotals("call"));
         })
-        it("should return 5.50 when passed with 'call' for a two calls", function() {
+        it("should return 5.50 when passed with 'call' for two calls", function() {
             const calculateRadio = radioBill();
 
             calculateRadio.setRadioBill("call")
@@ -15,7 +15,7 @@ describe("Testing the Radio Bill function", function() {
         })
     })
     describe("Testing Sms's Total", function() {
-        it("should return 0.75 when passed with 'sms' for a single sms's", function() {
+        it("should return 0.75 when passed with 'sms' for a single sms", function() {
             const calculateRadio = radioBill();
 
             calculateRadio.setRadioBill("sms")

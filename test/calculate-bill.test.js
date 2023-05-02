@@ -11,10 +11,10 @@ describe("Testing the Calculate Bill Function", function() {
         billCalculate.setBillTotal("sms")
         assert.equal(0.75, billCalculate.getBillTotal())
     })
-    it("should return 3.75 when passed with 'call, sms' for a single call and single sms", function() {
+    it("should return 6.25 when passed with 'call, call, sms' for a single call and single sms", function() {
         let billCalculate = calculateBill();
         
-        billCalculate.setBillTotal("call, sms")
-        assert.equal(3.50, billCalculate.getBillTotal())
+        billCalculate.setBillTotal("call, call, sms")
+        assert.equal(6.25, billCalculate.getBillTotal())
     })
 })
