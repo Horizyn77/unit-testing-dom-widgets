@@ -1,4 +1,4 @@
-function radioBill() {
+function RadioBill() {
     
     let radioCallTotal = 0;
     let radioSmsTotal = 0;
@@ -22,8 +22,28 @@ function radioBill() {
             return radioTotal;
         }
     }
+
+    function hasReachedCriticalLevelRad() {
+        return radioTotal >= 50;
+    }
+
+    function hasReachedWarningLevelRad() {
+        return radioTotal >= 30;
+    }
+
+    function totalClassNameRad() {
+        if(hasReachedCriticalLevelRad()) {
+            return "danger";
+        }
+        
+        if (hasReachedWarningLevelRad()) {
+            return "warning";
+        }
+    }
+
     return {
         setRadioBill,
-        getRadioTotals
+        getRadioTotals,
+        totalClassNameRad,
     }
 }

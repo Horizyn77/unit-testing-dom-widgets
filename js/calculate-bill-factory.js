@@ -1,4 +1,4 @@
-function calculateBill() {
+function CalculateBill() {
     let billTotal = 0;
     
     function setBillTotal(item) {
@@ -21,8 +21,27 @@ function calculateBill() {
         return billTotal;
     }
 
+    function hasReachedCriticalLevelCalc() {
+        return billTotal >= 30;
+    }
+
+    function hasReachedWarningLevelCalc() {
+        return billTotal >= 20;
+    }
+
+    function totalClassNameCalc() {
+        if(hasReachedCriticalLevelCalc()) {
+            return "danger";
+        }
+
+        if(hasReachedWarningLevelCalc()) {
+            return "warning";
+        }
+    }
+
     return {
         setBillTotal,
-        getBillTotal
+        getBillTotal,
+        totalClassNameCalc
     }
 }

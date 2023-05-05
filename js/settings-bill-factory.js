@@ -1,4 +1,4 @@
-function settingsBill() {
+function SettingsBill() {
     let callCost = 0;
     let smsCost = 0;
     let warningLevel = 0;
@@ -73,7 +73,7 @@ function settingsBill() {
 
     function totalClassName() {
         if (hasReachedCriticalLevel()) {
-            return "critical";
+            return "danger";
         }
 
         if (hasReachedWarningLevel()) {

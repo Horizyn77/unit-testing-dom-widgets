@@ -1,4 +1,4 @@
-function textBill() {
+function TextBill() {
 
     let textCallTotal = 0;
     let textSmsTotal = 0;
@@ -24,8 +24,27 @@ function textBill() {
         }
     }
 
+    function hasReachedCriticalLevelText() {
+        return textTotal >= 50;
+    }
+
+    function hasReachedWarningLevelText() {
+        return textTotal >= 30;
+    }
+
+    function totalClassNameText() {
+        if(hasReachedCriticalLevelText()) {
+            return "danger";
+        }
+
+        if(hasReachedWarningLevelText()) {
+            return "warning";
+        }
+    }
+
     return {
         setTextBill,
-        getTotals
+        getTotals,
+        totalClassNameText
     }
 }
